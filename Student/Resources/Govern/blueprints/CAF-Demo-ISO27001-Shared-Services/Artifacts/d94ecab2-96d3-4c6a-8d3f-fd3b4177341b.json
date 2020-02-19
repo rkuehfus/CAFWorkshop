@@ -1,0 +1,13 @@
+{
+  "kind": "policyAssignment",
+  "properties": {
+    "displayName": "Blueprint initiative for ISO 27001",
+    "dependsOn": [],
+    "policyDefinitionId": "/providers/Microsoft.Authorization/policySetDefinitions/89c6cddc-1c73-4ac1-b19c-54d1a15a42f2",
+    "parameters": {
+      "listOfResourceTypesWithDiagnosticLogsEnabled": {
+        "value": "[parameters('blueprintInitiativeForISO27001_listOfResourceTypesWithDiagnosticLogsEnabled')]"
+      }
+    }
+  }
+}

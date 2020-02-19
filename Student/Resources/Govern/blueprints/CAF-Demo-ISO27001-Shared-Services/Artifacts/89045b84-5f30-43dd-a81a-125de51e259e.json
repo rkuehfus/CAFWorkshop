@@ -1,0 +1,16 @@
+{
+  "kind": "policyAssignment",
+  "properties": {
+    "displayName": "[Preview]: Deploy Log Analytics Agent for Windows VMs",
+    "dependsOn": [],
+    "policyDefinitionId": "/providers/Microsoft.Authorization/policyDefinitions/0868462e-646c-4fe3-9ced-a733534b6a2c",
+    "parameters": {
+      "logAnalytics": {
+        "value": "[concat(subscription().id, '/resourceGroups/', concat(parameters('organization'),'-sharedsvcs-log-rg'), '/providers/Microsoft.OperationalInsights/workspaces/', concat(parameters('organization'), '-sharedsvcs-log'))]"
+      },
+      "listOfImageIdToInclude": {
+        "value": "[parameters('ISO27001Policy_deployLogAnalyticsAgentforWindowsVMs_listOfImageIdToInclude')]"
+      }
+    }
+  }
+}

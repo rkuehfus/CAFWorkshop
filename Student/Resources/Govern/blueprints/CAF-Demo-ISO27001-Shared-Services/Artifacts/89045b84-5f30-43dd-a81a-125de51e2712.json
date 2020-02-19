@@ -1,0 +1,16 @@
+{
+  "kind": "policyAssignment",
+  "properties": {
+    "displayName": "[Preview]: Deploy Log Analytics Agent for Linux VM Scale Sets (VMSS)",
+    "dependsOn": [],
+    "policyDefinitionId": "/providers/Microsoft.Authorization/policyDefinitions/5ee9e9ed-0b42-41b7-8c9c-3cfb2fbe2069",
+    "parameters": {
+      "logAnalytics": {
+        "value": "[concat(subscription().id, '/resourceGroups/', concat(parameters('organization'),'-sharedsvcs-log-rg'), '/providers/Microsoft.OperationalInsights/workspaces/', concat(parameters('organization'), '-sharedsvcs-log'))]"
+      },
+      "listOfImageIdToInclude": {
+        "value": "[parameters('ISO27001Policy_deployLogAnalyticsAgentforLinuxVMScaleSets_listOfImageIdToInclude')]"
+      }
+    }
+  }
+}
