@@ -1,4 +1,4 @@
-#Create custom Role
+#Create custom Role for Resourcegroup
 az role definition create --role-definition ./rgcreator.json
 
 #List the new custom role
