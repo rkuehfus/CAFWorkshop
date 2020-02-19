@@ -3,13 +3,14 @@
 # Connect to Azure
 Connect-AzAccount -UseDeviceAuthentication
 
-# Variables for common values
+# Variables for common values, update the $tier to the each tier you wish to try out.
 $location = "eastus2"
 $tier = "Webtier"
 $vnet = "CAFVNET"
 $subnetname = $Webtier+'Subnet'
-$netrg = "treyres-VNet-rg"
-$Apprg = "treyres-Application-rg"
+# Update the Org Name below to the one you are using in your Blueprint
+$netrg = "<Org Name>-VNet-rg"
+$Apprg = "<Org Name>-Application-rg"
 
 #Create the virtual network and IP address for the front-end IP pool
 $vnet = Get-AzVirtualNetwork -Name $vnet -ResourceGroupName $netrg
