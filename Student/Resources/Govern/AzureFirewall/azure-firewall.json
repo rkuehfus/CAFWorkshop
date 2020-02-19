@@ -1,16 +1,8 @@
 {
-  "kind": "template",
-  "properties": {
-    "displayName": "Azure Firewall template",
-    "description": "",
-    "dependsOn": [
-      "net"
-    ],
-    "template": {
       "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
       "contentVersion": "1.0.0.0",
       "parameters": {
-        "organization": {
+        "Organization_Name": {
           "type": "string",
           "metadata": {
             "description": "Organization name. For example: Contoso"
@@ -35,11 +27,11 @@
         }
       },
       "variables": {
-        "deployment-prefix": "[concat(parameters('organization'), '-sharedsvcs')]",
-        "oms-workspace-resourceGroup": "[concat(variables('deployment-prefix'), '-log-rg')]",
+        "deployment-prefix": "[concat(parameters('Organization_Name'), '-sharedsvcs')]",
+        "oms-workspace-resourceGroup": "[concat(variables('deployment-prefix'), '-rg')]",
         "oms-workspace-name": "[concat(variables('deployment-prefix'), '-log')]",
-        "vnet-resourceGroup": "[concat(variables('deployment-prefix'), '-net-rg')]",
-        "vnet-name": "[concat(variables('deployment-prefix'), '-vnet')]",
+        "vnet-resourceGroup": "[concat(parameters('Organization_Name'), '-VNet-rg')]",
+        "vnet-name": "CAFVNET",
         "azure-fw-subnet-ID": "[concat(resourceId(variables('vnet-resourceGroup'), 'Microsoft.Network/virtualNetworks', variables('vnet-name')) , '/subnets/AzureFirewallSubnet')]",
         "azure-fw-pip-name": "[concat(variables('deployment-prefix'), '-az-fw-pip')]",
         "azure-fw-pip-id": "[resourceId('Microsoft.Network/publicIPAddresses', variables('azure-fw-pip-name'))]",
@@ -334,18 +326,4 @@
         }
       ],
       "outputs": {}
-    },
-    "resourceGroup": "ResourceGroup2",
-    "parameters": {
-      "organization": {
-        "value": "[parameters('organization')]"
-      },
-      "azure-firewall-private-ip": {
-        "value": "[parameters('azure-firewall_azure-firewall-private-ip')]"
-      },
-      "logs-retention-in-days": {
-        "value": "[parameters('azure-firewall_logs-retention-in-days')]"
-      }
     }
-  }
-}
