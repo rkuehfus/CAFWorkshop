@@ -1,0 +1,652 @@
+{
+  "properties": {
+    "displayName": "CAF Foundation",
+    "description": "Microsoft Cloud Adoption Framework for Azure – Configure Foundational best practices",
+    "targetScope": "subscription",
+    "parameters": {
+      "Policy_Allowed-VM-SKUs": {
+        "type": "array",
+        "metadata": {
+          "displayName": "Virtual Machine SKUs you want to ALLOW",
+          "description": "Policy_Allowed-VM-SKUs"
+        },
+        "defaultValue": [
+          "Standard_B2ms",
+          "Standard_DS1_v2",
+          "Standard_F2s_v2"
+        ],
+        "allowedValues": [
+          "Standard_A1_v2",
+          "Standard_A2m_v2",
+          "Standard_A2_v2",
+          "Standard_A4m_v2",
+          "Standard_A4_v2",
+          "Standard_A8m_v2",
+          "Standard_A8_v2",
+          "Standard_B1ls",
+          "Standard_B1ms",
+          "Standard_B1s",
+          "Standard_B2ms",
+          "Standard_B2s",
+          "Standard_B4ms",
+          "Standard_B8ms",
+          "Standard_D1_v2",
+          "Standard_D2s_v3",
+          "Standard_D2_v2",
+          "Standard_D2_v3",
+          "Standard_D3_v2",
+          "Standard_D4s_v3",
+          "Standard_D4_v2",
+          "Standard_D4_v3",
+          "Standard_D5_v2",
+          "Standard_D8s_v3",
+          "Standard_D8_v3",
+          "Standard_D11_v2",
+          "Standard_D12_v2",
+          "Standard_D13_v2",
+          "Standard_D14_v2",
+          "Standard_D15_v2",
+          "Standard_D16s_v3",
+          "Standard_D16_v3",
+          "Standard_D32s_v3",
+          "Standard_D32_v3",
+          "Standard_D64s_v3",
+          "Standard_D64_v3",
+          "Standard_DC2s",
+          "Standard_DC4s",
+          "Standard_DS1_v2",
+          "Standard_DS2_v2",
+          "Standard_DS3_v2",
+          "Standard_DS4_v2",
+          "Standard_DS5_v2",
+          "Standard_DS11-1_v2",
+          "Standard_DS11_v2",
+          "Standard_DS12-1_v2",
+          "Standard_DS12-2_v2",
+          "Standard_DS12_v2",
+          "Standard_DS13-2_v2",
+          "Standard_DS13-4_v2",
+          "Standard_DS13_v2",
+          "Standard_DS14-4_v2",
+          "Standard_DS14-8_v2",
+          "Standard_DS14_v2",
+          "Standard_DS15_v2",
+          "Standard_E2s_v3",
+          "Standard_E2_v3",
+          "Standard_E4-2s_v3",
+          "Standard_E4s_v3",
+          "Standard_E4_v3",
+          "Standard_E8-2s_v3",
+          "Standard_E8-4s_v3",
+          "Standard_E8s_v3",
+          "Standard_E8_v3",
+          "Standard_E16-4s_v3",
+          "Standard_E16-8s_v3",
+          "Standard_E16s_v3",
+          "Standard_E16_v3",
+          "Standard_E20s_v3",
+          "Standard_E20_v3",
+          "Standard_E32-8s_v3",
+          "Standard_E32-16s_v3",
+          "Standard_E32s_v3",
+          "Standard_E32_v3",
+          "Standard_E64-16s_v3",
+          "Standard_E64-32s_v3",
+          "Standard_E64is_v3",
+          "Standard_E64i_v3",
+          "Standard_E64s_v3",
+          "Standard_E64_v3",
+          "Standard_F1s",
+          "Standard_F2s",
+          "Standard_F2s_v2",
+          "Standard_F4s",
+          "Standard_F4s_v2",
+          "Standard_F8s",
+          "Standard_F8s_v2",
+          "Standard_F16s",
+          "Standard_F16s_v2",
+          "Standard_F32s_v2",
+          "Standard_F64s_v2",
+          "Standard_F72s_v2",
+          "Standard_GS1",
+          "Standard_GS2",
+          "Standard_GS3",
+          "Standard_GS4",
+          "Standard_GS4-4",
+          "Standard_GS4-8",
+          "Standard_GS5",
+          "Standard_GS5-8",
+          "Standard_GS5-16",
+          "Standard_H8",
+          "Standard_H8m",
+          "Standard_H16",
+          "Standard_H16m",
+          "Standard_H16mr",
+          "Standard_H16r",
+          "Standard_HB60rs",
+          "Standard_HC44rs",
+          "Standard_L4s",
+          "Standard_L8s",
+          "Standard_L8s_v2",
+          "Standard_L16s",
+          "Standard_L16s_v2",
+          "Standard_L32s",
+          "Standard_L32s_v2",
+          "Standard_L64s_v2",
+          "Standard_L80s_v2",
+          "Standard_M8-2ms",
+          "Standard_M8-4ms",
+          "Standard_M8ms",
+          "Standard_M16-4ms",
+          "Standard_M16-8ms",
+          "Standard_M16ms",
+          "Standard_M32-8ms",
+          "Standard_M32-16ms",
+          "Standard_M32ls",
+          "Standard_M32ms",
+          "Standard_M32ts",
+          "Standard_M64",
+          "Standard_M64-16ms",
+          "Standard_M64-32ms",
+          "Standard_M64ls",
+          "Standard_M64m",
+          "Standard_M64ms",
+          "Standard_M64s",
+          "Standard_M128",
+          "Standard_M128-32ms",
+          "Standard_M128-64ms",
+          "Standard_M128m",
+          "Standard_M128ms",
+          "Standard_M128s",
+          "Standard_NC6",
+          "Standard_NC6s_v2",
+          "Standard_NC6s_v3",
+          "Standard_NC12",
+          "Standard_NC12s_v2",
+          "Standard_NC12s_v3",
+          "Standard_NC24",
+          "Standard_NC24r",
+          "Standard_NC24rs_v2",
+          "Standard_NC24rs_v3",
+          "Standard_NC24s_v2",
+          "Standard_NC24s_v3",
+          "Standard_ND6s",
+          "Standard_ND12s",
+          "Standard_ND24rs",
+          "Standard_ND24s",
+          "Standard_NV6",
+          "Standard_NV6s_v2",
+          "Standard_NV12",
+          "Standard_NV12s_v2",
+          "Standard_NV24",
+          "Standard_NV24s_v2"
+        ]
+      },
+      "Policy_Resource-Types-DENY": {
+        "type": "array",
+        "metadata": {
+          "displayName": "Select the Azure Resource Types that you will DENY",
+          "description": "Policy_Resource-Types-DENY",
+          "strongType": "resourceTypes"
+        }
+      },
+      "Policy_Allowed-Locations": {
+        "type": "array",
+        "metadata": {
+          "displayName": "Which Azure Regions will you allow resources to be built in?",
+          "description": "Policy_Allowed-Locations",
+          "strongType": "location"
+        },
+        "defaultValue": []
+      },
+      "Policy_CostCenter_Tag": {
+        "type": "string",
+        "metadata": {
+          "displayName": "Append CostCenter TAG & its value from the Resource Group",
+          "description": "AzureRegion"
+        },
+        "allowedValues": []
+      },
+      "Policy_Allowed-StorageAccount-SKUs": {
+        "type": "array",
+        "metadata": {
+          "displayName": "Storage Account SKUs you want to ALLOW",
+          "description": "Policy_Allowed-StorageAccount-SKUs",
+          "strongType": "storageSKUs"
+        },
+        "defaultValue": [
+          "Standard_LRS"
+        ],
+        "allowedValues": [
+          "Premium_LRS",
+          "Standard_GRS",
+          "Standard_LRS",
+          "Standard_RAGRS",
+          "Standard_ZRS"
+        ]
+      },
+      "appendtaganditsdefaultvalue_tagValue": {
+        "type": "string",
+        "metadata": {
+          "displayName": "Tag Value (Policy: Append tag and its default value)"
+        },
+        "allowedValues": []
+      },
+      "appendtaganditsdefaultvaluetoresourcegroups_tagValue": {
+        "type": "string",
+        "metadata": {
+          "displayName": "Tag Value (Policy: Append tag and its default value to resource groups)"
+        },
+        "allowedValues": []
+      },
+      "deployLogAnalyticsAgentforWindowsVMs_listOfImageIdToInclude": {
+        "type": "array",
+        "metadata": {
+          "displayName": "[Preview]: Optional: List of VM images that have supported Windows OS to add to scope"
+        },
+        "defaultValue": [],
+        "allowedValues": []
+      },
+      "Organization_Name": {
+        "type": "string",
+        "metadata": {
+          "displayName": "Enter your organization name (e.g. Contoso), must be unique",
+          "description": "Organization_Name"
+        },
+        "defaultValue": ""
+      },
+      "KV-AccessPolicy": {
+        "type": "string",
+        "metadata": {
+          "displayName": "KV-AccessPolicy (Deploy Key Vault)"
+        }
+      },
+      "LogAnalytics_DataRetention": {
+        "type": "int",
+        "metadata": {
+          "displayName": "data-retention (Deploy Log Analytics)",
+          "description": "Number of days data will be retained for"
+        },
+        "defaultValue": 365
+      },
+      "LogAnalytics_Location": {
+        "type": "string",
+        "metadata": {
+          "displayName": "location (Deploy Log Analytics)",
+          "description": "Region used when establishing the workspace"
+        },
+        "allowedValues": [
+          "Australia Central",
+          "Australia East",
+          "Australia Southeast",
+          "Brazil South",
+          "Canada Central",
+          "Central India",
+          "Central US",
+          "East Asia",
+          "East US",
+          "East US 2",
+          "France Central",
+          "Japan East",
+          "Korea Central",
+          "North Central US",
+          "North Europe",
+          "South Africa North",
+          "South Central US",
+          "Southeast Asia",
+          "UK South",
+          "UK West",
+          "West Europe",
+          "West US",
+          "West US 2"
+        ]
+      },
+      "deployBackupVault_Organization_Name": {
+        "type": "string",
+        "metadata": {
+          "displayName": "Organization_Name (Deploy Backup Vault)",
+          "description": "Organization name. For example: Contoso"
+        }
+      },
+      "deployBackupVault_policyName": {
+        "type": "string",
+        "metadata": {
+          "displayName": "policyName (Deploy Backup Vault)",
+          "description": "Name of the Backup Policy"
+        },
+        "defaultValue": "WeeklyBackupPolicy1"
+      },
+      "deployBackupVault_scheduleRunDays": {
+        "type": "array",
+        "metadata": {
+          "displayName": "scheduleRunDays (Deploy Backup Vault)",
+          "description": "Backup Schedule will run on array of Days like, Monday, Tuesday etc. Applies in Weekly Backup Type only."
+        },
+        "defaultValue": [
+          "Sunday",
+          "Tuesday",
+          "Thursday"
+        ]
+      },
+      "deployBackupVault_scheduleRunTimes": {
+        "type": "array",
+        "metadata": {
+          "displayName": "scheduleRunTimes (Deploy Backup Vault)",
+          "description": "Times in day when backup should be triggered. e.g. 01:00, 13:00. This will be used in LTR too for daily, weekly, monthly and yearly backup."
+        },
+        "defaultValue": [
+          "2016-09-21T05:30:00Z"
+        ]
+      },
+      "deployBackupVault_timeZone": {
+        "type": "string",
+        "metadata": {
+          "displayName": "timeZone (Deploy Backup Vault)",
+          "description": "Any Valid timezone, for example:UTC, Pacific Standard Time. Refer: https://msdn.microsoft.com/en-us/library/gg154758.aspx"
+        },
+        "defaultValue": "UTC"
+      },
+      "deployBackupVault_weeklyRetentionDurationCount": {
+        "type": "int",
+        "metadata": {
+          "displayName": "weeklyRetentionDurationCount (Deploy Backup Vault)",
+          "description": "Number of weeks you want to retain the backup"
+        },
+        "defaultValue": 104
+      },
+      "deployBackupVault_daysOfTheWeekForMontlyRetention": {
+        "type": "array",
+        "metadata": {
+          "displayName": "daysOfTheWeekForMontlyRetention (Deploy Backup Vault)",
+          "description": "Array of Days for Monthly Retention (Min One or Max all values from scheduleRunDays, but not any other days which are not part of scheduleRunDays)"
+        },
+        "defaultValue": [
+          "Sunday",
+          "Tuesday"
+        ]
+      },
+      "deployBackupVault_weeksOfTheMonthForMonthlyRetention": {
+        "type": "array",
+        "metadata": {
+          "displayName": "weeksOfTheMonthForMonthlyRetention (Deploy Backup Vault)",
+          "description": "Array of Weeks for Monthly Retention - First, Second, Third, Fourth, Last"
+        },
+        "defaultValue": [
+          "First",
+          "Third"
+        ]
+      },
+      "deployBackupVault_monthlyRetentionDurationCount": {
+        "type": "int",
+        "metadata": {
+          "displayName": "monthlyRetentionDurationCount (Deploy Backup Vault)",
+          "description": "Number of months you want to retain the backup"
+        },
+        "defaultValue": 60
+      },
+      "deployBackupVault_monthsOfYear": {
+        "type": "array",
+        "metadata": {
+          "displayName": "monthsOfYear (Deploy Backup Vault)",
+          "description": "Array of Months for Yearly Retention"
+        },
+        "defaultValue": [
+          "January",
+          "March",
+          "August"
+        ]
+      },
+      "deployBackupVault_daysOfTheWeekForYearlyRetention": {
+        "type": "array",
+        "metadata": {
+          "displayName": "daysOfTheWeekForYearlyRetention (Deploy Backup Vault)",
+          "description": "Array of Days for Yearly Retention (Min One or Max all values from scheduleRunDays, but not any other days which are not part of scheduleRunDays)"
+        },
+        "defaultValue": [
+          "Sunday",
+          "Tuesday"
+        ]
+      },
+      "deployBackupVault_weeksOfTheMonthForYearlyRetention": {
+        "type": "array",
+        "metadata": {
+          "displayName": "weeksOfTheMonthForYearlyRetention (Deploy Backup Vault)",
+          "description": "Array of Weeks for Yearly Retention - First, Second, Third, Fourth, Last"
+        },
+        "defaultValue": [
+          "First",
+          "Third"
+        ]
+      },
+      "deployBackupVault_yearlyRetentionDurationCount": {
+        "type": "int",
+        "metadata": {
+          "displayName": "yearlyRetentionDurationCount (Deploy Backup Vault)",
+          "description": "Number of years you want to retain the backup"
+        },
+        "defaultValue": 10
+      },
+      "vnet_vnetName": {
+        "type": "string",
+        "metadata": {
+          "displayName": "vnetName (LandingZone_Vnet_NSG)",
+          "description": "VNet name"
+        },
+        "defaultValue": "CAFVNET"
+      },
+      "vnet_vnetAddressPrefix": {
+        "type": "string",
+        "metadata": {
+          "displayName": "vnetAddressPrefix (LandingZone_Vnet_NSG)",
+          "description": "Address prefix"
+        },
+        "defaultValue": "10.0.0.0/16"
+      },
+      "vnet_location": {
+        "type": "string",
+        "metadata": {
+          "displayName": "location (LandingZone_Vnet_NSG)",
+          "description": "Location for all resources."
+        },
+        "defaultValue": "[resourceGroup().location]"
+      },
+      "landingZoneVnet_gatewaysubnetPrefix": {
+        "type": "string",
+        "metadata": {
+          "displayName": "gatewaysubnetPrefix (LandingZone_Vnet_NSG)",
+          "description": "gateway Subnet Prefix"
+        },
+        "defaultValue": "10.0.255.224/27"
+      },
+      "landingZoneVnet_gatewaysubnetName": {
+        "type": "string",
+        "metadata": {
+          "displayName": "gatewaysubnetName (LandingZone_Vnet_NSG)",
+          "description": "Gateway Subnet Name"
+        },
+        "defaultValue": "gatewaysubnet"
+      },
+      "landingZoneVnet_FirewallPrefix": {
+        "type": "string",
+        "metadata": {
+          "displayName": "FirewallPrefix (LandingZone_Vnet_NSG)",
+          "description": "Firewall Subnet Prefix"
+        },
+        "defaultValue": "10.0.4.0/24"
+      },
+      "landingZoneVnet_FirewallsubnetName": {
+        "type": "string",
+        "metadata": {
+          "displayName": "FirewallsubnetName (LandingZone_Vnet_NSG)",
+          "description": "Firewall Subnet Name"
+        },
+        "defaultValue": "AzureFirewallSubnet"
+      },
+      "landingZoneVnet_WebtierPrefix": {
+        "type": "string",
+        "metadata": {
+          "displayName": "WebtierPrefix (LandingZone_Vnet_NSG)",
+          "description": "Webtier Subnet Prefix"
+        },
+        "defaultValue": "10.0.1.0/24"
+      },
+      "landingZoneVnet_WebtiersubnetName": {
+        "type": "string",
+        "metadata": {
+          "displayName": "WebtiersubnetName (LandingZone_Vnet_NSG)",
+          "description": "Webtier Subnet Name"
+        },
+        "defaultValue": "WebtierSubnet"
+      },
+      "landingZoneVnet_BusinesstierPrefix": {
+        "type": "string",
+        "metadata": {
+          "displayName": "BusinesstierPrefix (LandingZone_Vnet_NSG)",
+          "description": "Businesstier Subnet Prefix"
+        },
+        "defaultValue": "10.0.2.0/24"
+      },
+      "landingZoneVnet_BusinesstiersubnetName": {
+        "type": "string",
+        "metadata": {
+          "displayName": "BusinesstiersubnetName (LandingZone_Vnet_NSG)",
+          "description": "Businesstier Subnet Name"
+        },
+        "defaultValue": "BusinesstierSubnet"
+      },
+      "landingZoneVnet_DatatierPrefix": {
+        "type": "string",
+        "metadata": {
+          "displayName": "DatatierPrefix (LandingZone_Vnet_NSG)",
+          "description": "Datatier Subnet Prefix"
+        },
+        "defaultValue": "10.0.3.0/24"
+      },
+      "landingZoneVnet_DatatiersubnetName": {
+        "type": "string",
+        "metadata": {
+          "displayName": "DatatiersubnetName (LandingZone_Vnet_NSG)",
+          "description": "Datatier Subnet Name"
+        },
+        "defaultValue": "DatatierSubnet"
+      },
+      "landingZoneVnet_AzureBastionPrefix": {
+        "type": "string",
+        "metadata": {
+          "displayName": "AzureBastionPrefix (LandingZone_Vnet_NSG)",
+          "description": "AzureBastion Subnet Prefix"
+        },
+        "defaultValue": "10.0.0.224/27"
+      },
+      "landingZoneVnet_AzureBastionsubnetName": {
+        "type": "string",
+        "metadata": {
+          "displayName": "AzureBastionsubnetName (LandingZone_Vnet_NSG)",
+          "description": "AzureBastion Subnet Name"
+        },
+        "defaultValue": "AzureBastionSubnet"
+      },
+      "landingZone_Vnet_NSG_WebtierNSGName": {
+        "type": "string",
+        "metadata": {
+          "displayName": "WebtierNSGName (LandingZone_Vnet_NSG)",
+          "description": "This is name of the networkSecurityGroup that will be assigned to Webtier Subnet"
+        },
+        "defaultValue": "Webtier_NSG"
+      },
+      "landingZone_Vnet_NSG_BusinessTierNSGName": {
+        "type": "string",
+        "metadata": {
+          "displayName": "BusinessTierNSGName (LandingZone_Vnet_NSG)",
+          "description": "This is name of the networkSecurityGroup that will be assigned to Businesstier Subnet"
+        },
+        "defaultValue": "Businesstier_NSG"
+      },
+      "landingZone_Vnet_NSG_DatatierNSGName": {
+        "type": "string",
+        "metadata": {
+          "displayName": "DatatierNSGName (LandingZone_Vnet_NSG)",
+          "description": "This is name of the networkSecurityGroup that will be assigned to Datatier Subnet"
+        },
+        "defaultValue": "Datatier_NSG"
+      },
+      "landingZone_Vnet_NSG_AzureBastionNSGName": {
+        "type": "string",
+        "metadata": {
+          "displayName": "AzureBastionNSGName (LandingZone_Vnet_NSG)",
+          "description": "This is name of the networkSecurityGroup that will be assigned to AzureBastion Subnet"
+        },
+        "defaultValue": "AzureBastion_NSG"
+      },
+      "azure-firewall_azure-firewall-private-ip": {
+        "type": "string",
+        "metadata": {
+          "displayName": "azure-firewall-private-ip (Azure Firewall template)"
+        },
+        "defaultValue": "10.0.4.4"
+      },
+      "azure-firewall_logs-retention-in-days": {
+        "type": "int",
+        "metadata": {
+          "displayName": "logs-retention-in-days (Azure Firewall template)",
+          "description": "Specifies the number of days that logs will be kept for; a value of 0 will retain data indefinitely"
+        },
+        "defaultValue": 365
+      },
+      "azureBackupshouldbeenabledforVirtualMachines_effect": {
+        "type": "string",
+        "metadata": {
+          "displayName": "Effect (Policy: Azure Backup should be enabled for Virtual Machines)"
+        },
+        "defaultValue": "AuditIfNotExists",
+        "allowedValues": [
+          "AuditIfNotExists",
+          "Disabled"
+        ]
+      },
+      "AzureRegion": {
+        "type": "string",
+        "metadata": {
+          "displayName": "Select the Azure Region to deploy the Resources",
+          "description": "AzureRegion",
+          "strongType": "location"
+        },
+        "defaultValue": "eastus"
+      }
+    },
+    "resourceGroups": {
+      "SharedServices-RG": {
+        "name": "[concat(parameters('Organization_Name'),'-SharedSvcs-rg')]",
+        "location": "[parameters('AzureRegion')]",
+        "metadata": {
+          "displayName": "Resource Group for Shared Services"
+        },
+        "dependsOn": []
+      },
+      "Network-RG": {
+        "name": "[concat(parameters('Organization_Name'),'-VNet-rg')]",
+        "location": "[parameters('AzureRegion')]",
+        "metadata": {
+          "displayName": "Resource Group for Networks"
+        },
+        "dependsOn": []
+      },
+      "Identity-RG": {
+        "name": "[concat(parameters('Organization_Name'),'-Identity-rg')]",
+        "location": "[parameters('AzureRegion')]",
+        "metadata": {
+          "displayName": "Resource Group for Identity Services"
+        },
+        "dependsOn": []
+      },
+      "Application-RG": {
+        "name": "[concat(parameters('Organization_Name'),'-Application-rg')]",
+        "location": "[parameters('AzureRegion')]",
+        "metadata": {
+          "displayName": "Resource Group for First Application"
+        },
+        "dependsOn": []
+      }
+    }
+  }
+}

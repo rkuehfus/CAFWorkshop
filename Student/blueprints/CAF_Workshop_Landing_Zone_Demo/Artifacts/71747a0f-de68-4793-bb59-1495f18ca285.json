@@ -1,0 +1,14 @@
+{
+  "kind": "policyAssignment",
+  "properties": {
+    "displayName": "Azure Backup should be enabled for Virtual Machines",
+    "dependsOn": [],
+    "policyDefinitionId": "/providers/Microsoft.Authorization/policyDefinitions/013e242c-8828-4970-87b3-ab247555486d",
+    "parameters": {
+      "effect": {
+        "value": "[parameters('azureBackupshouldbeenabledforVirtualMachines_effect')]"
+      }
+    },
+    "resourceGroup": "Application-RG"
+  }
+}
