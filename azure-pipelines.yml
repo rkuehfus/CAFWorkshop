@@ -6,12 +6,24 @@
 trigger:
 - master
 
-pool:
-  vmImage: 'ubuntu-latest'
-
 steps:
 - script: echo Hello, world!
   displayName: 'Run a one-line script'
+
+- task: AzurePowerShell@5
+  inputs:
+    ScriptType: 'InlineScript'
+    Inline: |
+      $url = "$(Build.Repository.Uri)".Replace("https://", "")
+      $url = "https://$env:SYSTEM_ACCESSTOKEN@$url"
+      # Install Azure Blueprint PS Module
+      Install-Module -Name Az.Blueprint -Verbose -Scope CurrentUser; Update-Help -Force -ErrorAction SilentlyContinuescripts 
+      
+      $b = Get-AzBlueprint -Name 'CAF_Workshop_Landing_Zone_Demo' -SubscriptionId '8b2ef784-0c0d-424c-8a7a-aa1304a0366a' -Version 'v4.8'
+      
+      Import-AzBlueprintWithArtifact -Name 'CAF_Workshop_Landing_Zone_Demo' -SubscriptionId '8b2ef784-0c0d-424c-8a7a-aa1304a0366a' -InputPath  '.\blueprints\CAF_Workshop_Landing_Zone_Demo'
+    FailOnStandardError: true
+    azurePowerShellVersion: 'LatestVersion'
 
 - script: |
     echo Add other tasks to build, test, and deploy your project.
