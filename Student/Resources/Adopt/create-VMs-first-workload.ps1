@@ -4,7 +4,7 @@
 Connect-AzAccount -UseDeviceAuthentication
 
 # Variables for common values, update the $tier to the each tier you wish to try out.
-$location = "eastus2"
+$location = "<region>"
 $tier = "Webtier"
 $vnet = "CAFVNET"
 $subnetname = $Webtier+'Subnet'
@@ -33,11 +33,11 @@ $healthProbe = New-AzLoadBalancerProbeConfig -Name "HealthProbe" -RequestPath "H
 $lbrule = New-AzLoadBalancerRuleConfig -Name "HTTP" -FrontendIpConfiguration $frontendIP -BackendAddressPool $beAddressPool -Probe $healthProbe -Protocol Tcp -FrontendPort 80 -BackendPort 80
 
 #Create the load balancer
-$NRPLB = New-AzLoadBalancer -ResourceGroupName $Apprg -Name NRP-LB$tier -Location "East US 2" -FrontendIpConfiguration $frontendIP -InboundNatRule $inboundNATRule1,$inboundNatRule2 -LoadBalancingRule $lbrule -BackendAddressPool $beAddressPool -Probe $healthProbe
+$NRPLB = New-AzLoadBalancer -ResourceGroupName $Apprg -Name NRP-LB$tier -Location $location -FrontendIpConfiguration $frontendIP -InboundNatRule $inboundNATRule1,$inboundNatRule2 -LoadBalancingRule $lbrule -BackendAddressPool $beAddressPool -Probe $healthProbe
 
 #create the NICs
-$backendnic1= New-AzNetworkInterface -ResourceGroupName $Apprg -Name lb-nic1-be-$tier -Location "East US 2" -PrivateIpAddress 10.0.1.6 -Subnet $backendSubnet -LoadBalancerBackendAddressPool $nrplb.BackendAddressPools[0] -LoadBalancerInboundNatRule $nrplb.InboundNatRules[0]
-$backendnic2= New-AzNetworkInterface -ResourceGroupName $Apprg -Name lb-nic2-be-$tier -Location "East US 2" -PrivateIpAddress 10.0.1.7 -Subnet $backendSubnet -LoadBalancerBackendAddressPool $nrplb.BackendAddressPools[0] -LoadBalancerInboundNatRule $nrplb.InboundNatRules[1]
+$backendnic1= New-AzNetworkInterface -ResourceGroupName $Apprg -Name lb-nic1-be-$tier -Location $location -PrivateIpAddress 10.0.1.6 -Subnet $backendSubnet -LoadBalancerBackendAddressPool $nrplb.BackendAddressPools[0] -LoadBalancerInboundNatRule $nrplb.InboundNatRules[0]
+$backendnic2= New-AzNetworkInterface -ResourceGroupName $Apprg -Name lb-nic2-be-$tier -Location $location -PrivateIpAddress 10.0.1.7 -Subnet $backendSubnet -LoadBalancerBackendAddressPool $nrplb.BackendAddressPools[0] -LoadBalancerInboundNatRule $nrplb.InboundNatRules[1]
 
 # Create the VMs 
 # Create user object
